@@ -1,0 +1,75 @@
+body {
+    font: 12px verdana, sans-serif;
+    margin: 0px;
+}
+
+
+.login-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: outset 2px #ccc;
+    width: 320px;
+    text-align: center;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+.login-container h2 {
+    margin-top: 0;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 8px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+.login-form input {
+    padding: 4px;
+    border: inset 2px #ccc;
+    font-size: 12px;
+    font-family: verdana, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    height: 24px;
+}
+.login-form label {
+    font-weight: bold;
+    margin-bottom: -6px;
+}
+.login-form input[type="submit"] {
+    padding: 6px;
+    margin-top: 8px;
+    background-color: #e0e0e0;
+    color: #000;
+    border: outset 2px #ccc;
+    font-size: 12px;
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    height: 30px;
+}
+.login-form input[type="submit"]:active {
+    border: inset 2px #ccc;
+    background-color: yellow;
+    padding-top: 7px;
+    padding-bottom: 5px;
+}
+.error-msg {
+    color: #cc0000;
+    padding: 6px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.priv_dostep {
+    margin: auto;
+    text-align: center;
+    margin-top: 16px;
+}
+.priv_dostep a {
+    color: blue;
+    text-align: center;
+}
