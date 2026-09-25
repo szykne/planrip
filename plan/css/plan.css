@@ -1,0 +1,109 @@
+.plan_main {
+    text-align: center;
+    overflow-x: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.plan_content {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    width: min-content;
+    
+}
+.plan_tabela {
+    /*border: 2px solid #c0c0c0;*/
+    border-collapse: separate; 
+    border-spacing: 0;
+    width: max-content;
+}
+.plan_tabela td{
+    font-size:11px;
+    padding: 4px;
+}
+.plan_tabela th{
+    font-size:13px;
+    padding: 4px;
+    text-align: center;
+}
+.plan_tabela td.g { /* godzina */
+    font-weight:bold;
+    vertical-align:top;
+    text-align:center;
+}
+.plan_tabela td.nr{ /* numer lekcji */
+    font-weight:bold;
+    text-align:center;
+    vertical-align:top;
+}
+
+.plan_tabela td.l { /* lekcja */
+    color:#000000;
+    vertical-align:top;
+}
+
+.plan_tabela a.l{ /* nauczyciel / sala / klasa */
+    color:#000099;
+}
+
+/* .plan_tabela .p{  przedmiot 
+    font-weight: bold;
+} */
+
+/* .op{  napis 
+    font:10px verdana,sans-serif
+} */
+
+.plan_tabela .pgroup { /* grupa */
+    font-size: 85%;
+}
+
+.plan_header {
+    text-align: center;
+    
+    place-items: center;
+    display: grid;
+    height: 80px;
+    
+}
+.plan_header h1 {
+    font: bold 36px verdana,sans-serif;
+    margin: 0px;
+}
+
+
+.plan_applies {
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.plan_note {
+    display: table;
+}
+
+
+.plan_generated {
+    font-size: 11px;
+    text-align: right;
+    float: right;
+    margin-top: 0px;
+}
+.plan_generated img {
+    vertical-align: top;
+    float: right;
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.plan_print {
+    font-size: 11px;
+    margin-top: 0px;
+    float: left;
+}
+
+
+.plan_header_separator {
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
