@@ -1,0 +1,273 @@
+/* Nawigacja */
+
+.nav { /* Cala nawigacja */
+    background: #bddfd0;
+    border-right: solid 5px lightgray; /* Linia miedzy nawigacja a kontentem */
+    color:#000000;
+}
+.nav-btn { /* Przycisk klasy */
+    background-color: #f0f0f0; 
+    color: #000 !important; 
+    border: 2px outset #ccc;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.nav a:active { /* Przycisk klasy wcisniety */
+    background-color: yellow !important;
+    border: 2px inset #ccc !important;
+}
+.nav-btn-prakt .prakt_label { /* Tabliczka praktyki */
+    background: #0f08;
+}
+.nav-btn-large { /* Inny przycisk nawigacji */
+    background-color: #f0f0f0; 
+    border: 2px outset #ccc;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    color: #000 !important; 
+}
+.content { 
+    border-left: solid 1px black; /* Linia miedzy nawigacja a kontentem */
+}
+
+/* Plan (klasa / nauczyciel / sala) */
+.plan_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+.plan_header_separator {
+    background: #000;
+}
+
+.plan_tabela {
+    /* klasyczny border="1" */
+    border: 1px outset #ccc;
+}
+.plan_tabela td {
+    border: 1px inset #ccc;
+}
+.plan_tabela th { /* Kolumna numeru lekcji i wiersz dni */
+    border: 1px inset #ccc;
+    background-color:#bddfd0;
+    color:#000099;
+}
+.plan_tabela td.g { /* godzina */
+    background-color:#eaf4f0;
+    color:#000099;
+}
+.plan_tabela td.nr { /* Kolumna godziny lekcji */
+    background-color:#bddfd0;
+    color:#000099;
+}
+.plan_tabela td.l { /* Komorka lekcji */
+    background-color:#ffffff;
+}
+.plan_tabela a.l{ /* Link nauczyciel / sala / klasa w komorce lekcji */
+    color:#000099;
+}
+
+
+/* Mapa szkoly */
+.mapa_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+
+.mapa_header_separator {
+    background: #000;
+}
+
+
+/* Lista nauczycieli */
+.nau_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+.nau_header_separator {
+    background: #000;
+}
+
+.tabela-nau a { /* Przycisk nauczyciel */
+    border: 2px solid #000;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.nau_kolor_1 { /* Patern kolor 1 */
+    color: white; 
+    background: #80c2ab;
+}
+.nau_kolor_2 { /* Patern kolor 2 */
+    color: black; 
+    background: white;
+}
+.nau_btn_active a:active { /* Przycisk wcisniety */
+    background-color: yellow !important;
+}
+
+/* Lista sal */
+.sale_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+.sale_header_separator {
+    background: #000;
+}
+
+.sala_button {
+    color: white; 
+    background: #80c2ab;
+    border: 2px outset #000;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.sala_button:active { /* Przycisk wcisniety */
+    background: yellow !important;
+}
+
+
+/* Wolne sale */
+
+.wolnesale_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+.wolnesale_header_separator {
+    background: #000;
+}
+
+.wolnesale_main {
+    border: 1px solid black;
+    background-color: #f0f0f0;
+}
+
+.wolnesale_button {
+    border: 2px outset #000;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    background: #80c2ab;
+    color: white !important;
+}
+
+.wolnesale_button:active {
+    background-color: black !important;
+}
+
+#wolnesale_selected {
+    background-color: blue;
+    border: 2px inset #000;
+}
+
+.wolnesale_sidebar {
+    border-right: 2px solid #ccc; /* linia dzielaca lekcje od dnia */
+}
+
+.wolnesale_no_results {
+    color: red;
+}
+.free_rooms_list li { /* Przyciski sal w wolnesale */
+    border: solid #000 1px;
+}
+
+.wolnesale_room_link {
+    background-color: white;
+    color: black;
+}
+.wolnesale_room_link:active {
+    background-color:black;
+    color: white;
+}
+
+
+/* Dyzury */
+
+.dyzury_header { /* header */
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+.dyzury_header_separator {
+    background: #000;
+}
+
+.dyzury_button { /* przyciski dni */
+    border: 2px outset #000;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    background: #80c2ab;
+    color: white !important;
+}
+.dyzury_button:active { /* Przycisk wcisniety */
+    background-color: black !important;
+}
+#dyzury_selected { /* Przycisk wybrany */
+    background-color: blue;
+    border: 2px inset #000;
+}
+
+.dyzury_tabela {
+    border: 2px inset #ccc;
+}
+.dyzury_tabela td {
+    border: 1px outset #ccc;
+}
+.dyzury_tabela th.g { /* wiersz miejsc */
+    background-color: #bddfd0;
+}
+.dyzury_tabela th { /* kolumna godziny */
+    border: 1px outset #ccc;
+    background-color: #eaf4f0; 
+}
+
+
+/* Praktyki */
+
+.praktyki_header {
+    background-color: #80c2ab;
+    color: white;
+    border-bottom: solid 2px lightgray;
+}
+
+.praktyki_header_separator {
+    background: #000;
+}
+
+.praktyki_table {
+    border: 1px outset #ccc;
+}
+
+.praktyki_table th {
+    border: 1px inset #ccc;
+    background-color: #bddfd0;
+}
+
+.praktyki_table .kl {
+    background-color: #eaf4f0;
+}
+
+.praktyki_table td {
+    border: 1px inset #ccc;
+}
+.praktyki_teraz { /* Aktywna praktyka w liscie */
+    background-color: #bada55 !important;
+}
+
+/* Ilezostalo.js */
+.ilezostalo {
+    margin-top: 5px;
+    /*font-family: "Courier New", Courier, monospace;*/
+    color: black;
+    font-size: smaller;
+    text-align: center;
+}
+
+.ilezostalo_lekcja {
+    background-color: #bddfd0 !important; /* old script: "#008" */
+}
+
+.ilezostalo_przerwa {
+    background-color: #bada55 !important;
+}
+
+.ilezostalo_blink {
+    color: #ff0000;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mapa szkoły - ZSEM</title>
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mapa.css">
+    <link rel="stylesheet" href="css/colors.css">
+</head>
+<body>
+    
+    <!-- UI Panels -->
+    <div id="ui-layer">
+        
+        <!-- Wybór piętra -->
+        <div class="panel panel-top-left">
+            <h2>Mapa szkoły</h2>
+            <div class="floor-selector">
+                <button class="floor-btn" data-floor="2">Drugie piętro</button>
+                <button class="floor-btn" data-floor="1">Pierwsze piętro</button>
+                <button class="floor-btn active" data-floor="0">Parter</button>
+                <button class="floor-btn" data-floor="-1">Hades</button>
+            </div>
+            <div id="current-floor-indicator"></div>
+        </div>
+
+        <!-- Wyszukiwarka sal -->
+        <div class="panel panel-top-right">
+            <div id="search-toggle" style="display: none; cursor: pointer; text-align: center; font-weight: bold; padding: 5px; background: #eee; border-radius: 4px;">Szukaj sali ▼</div>
+            <div id="search-content">
+                <h3>Wyszukaj salę</h3>
+                <input type="text" id="room-search" placeholder="np. 14, 43...">
+                <div id="room-list">
+                    <div class="room-item" data-id="r9" data-floor="1"><strong>Administracja</strong></div>
+                    <div class="room-item" data-id="r1" data-floor="0"><strong>Biblioteka szkolna</strong></div>
+                    <div class="room-item" data-id="r11" data-floor="1"><strong>Pedagog</strong></div>
+                    <div class="room-item" data-id="r8" data-floor="0"><strong>Pielęgniarka</strong></div>
+                    <div class="room-item" data-id="r10" data-floor="0"><strong>Portiernia</strong></div>
+                    <div class="room-item" data-id="r9" data-floor="0"><strong>Psycholog</strong></div>
+                    <div class="room-item" data-id="r18" data-floor="0"><strong>Sala 11</strong></div>
+                    <div class="room-item" data-id="r17" data-floor="0"><strong>Sala 12</strong></div>
+                    <div class="room-item" data-id="r15" data-floor="0"><strong>Sala 13</strong></div>
+                    <div class="room-item" data-id="r14" data-floor="0"><strong>Sala 14</strong></div>
+                    <div class="room-item" data-id="r3" data-floor="0"><strong>Sala 15</strong></div>
+                    <div class="room-item" data-id="r2" data-floor="0"><strong>Sala 16</strong></div>
+                    <div class="room-item" data-id="r10" data-floor="1"><strong>Sala 38</strong></div>
+                    <div class="room-item" data-id="r12" data-floor="1"><strong>Sala 39</strong></div>
+                    <div class="room-item" data-id="r2" data-floor="-1"><strong>Sala 4</strong></div>
+                    <div class="room-item" data-id="r14" data-floor="1"><strong>Sala 40</strong></div>
+                    <div class="room-item" data-id="r17" data-floor="1"><strong>Sala 41</strong></div>
+                    <div class="room-item" data-id="r19" data-floor="1"><strong>Sala 42</strong></div>
+                    <div class="room-item" data-id="r20" data-floor="1"><strong>Sala 43</strong></div>
+                    <div class="room-item" data-id="r12" data-floor="2"><strong>Sala 44</strong></div>
+                    <div class="room-item" data-id="r11" data-floor="2"><strong>Sala 45</strong></div>
+                    <div class="room-item" data-id="r6" data-floor="2"><strong>Sala 46</strong></div>
+                    <div class="room-item" data-id="r5" data-floor="2"><strong>Sala 47</strong></div>
+                    <div class="room-item" data-id="r4" data-floor="2"><strong>Sala 48</strong></div>
+                    <div class="room-item" data-id="r2" data-floor="2"><strong>Sala 51</strong></div>
+                    <div class="room-item" data-id="r1" data-floor="2"><strong>Sala 52</strong></div>
+                    <div class="room-item" data-id="r4" data-floor="-1"><strong>Sala 6</strong></div>
+                    <div class="room-item" data-id="r5" data-floor="-1"><strong>Sala 7</strong></div>
+                    <div class="room-item" data-id="r6" data-floor="-1"><strong>Sala 8</strong></div>
+                    <div class="room-item" data-id="r4" data-floor="0"><strong>Sala gimnastyczna</strong></div>
+                    <div class="room-item" data-id="r1" data-floor="-1"><strong>Sklepik szkolny</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info o sali -->
+        <div class="panel panel-bottom-center" id="room-info-panel" style="display: none;">
+            <button class="close-btn" id="close-info">×</button>
+            <h3 id="info-room-name">Nazwa sali</h3>
+            <p id="info-room-desc">Opis sali</p>
+            <hr>
+            <div id="info-timetable"></div>
+            <div id="info-actions"></div>
+        </div>
+        
+    </div>
+
+    <!-- Map Container -->
+    <div id="map-wrapper">
+        <div id="map-container" style="overflow: hidden; user-select: none; touch-action: none;">
+            <div id="map-loading" style="display: none;">Ładowanie mapy...</div>
+            <div id="map-error" style="display: none; color: red;">Brak mapy!</div>
+        </div>
+    </div>
+
+    <!-- Konfiguracja mapy -->
+    <script>
+        const INITIAL_FLOOR = 0;
+        const INITIAL_ROOM = null;
+        const FLOORS_CONFIG = {
+            "-1": "Hades",
+            "0": "Parter",
+            "1": "I Piętro",
+            "2": "II Piętro"
+        };
+        const MAP_FILES = {
+            "-1": "svg/zsem_p_minus_1.svg",
+            "0": "svg/zsem_p0.svg",
+            "1": "svg/zsem_p1.svg",
+            "2": "svg/zsem_p2.svg"
+        };
+    </script>
+
+    <!-- Skrypty JS -->
+    <script src="js/panzoom.min.js"></script>
+    <script src="js/mapa.js"></script>
+
+</body>
+</html>
