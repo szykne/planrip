@@ -1,0 +1,44 @@
+.praktyki_header {
+    text-align: center;
+    place-items: center;
+    display: grid;
+    height: 50px;
+}
+.praktyki_header h1 {
+    font: bold 36px verdana,sans-serif;
+    margin: 0px;
+}
+
+.praktyki_header_separator {
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+
+.praktyki_main {
+    text-align: center;
+}
+
+.praktyki_table {
+    margin: auto;
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin-top: 40px;
+}
+
+.praktyki_table th {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font: 18px verdana, sans-serif;
+    font-weight: bold;
+}
+
+.praktyki_table td {
+    font: 18px verdana, sans-serif;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
